@@ -8,42 +8,66 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html" class="active">Главная</a></li>
-            <li><a href="page2.html">Honkai: Star Rail</a></li>
-            <li><a href="page3.html">Project Sekai</a></li>
-            <li><a href="page4.html">Cookie Run: Kingdom</a></li>
-        </ul>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Мир <span>игр</span></a>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="page2.html">Honkai: Star Rail</a></li>
+                <li><a href="page3.html">Project Sekai</a></li>
+                <li><a href="page4.html">Cookie Run: Kingdom</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
+    <header class="hero">
+        <div class="hello">🎮 Топ-3 мобильных игр</div>
         <h1>Мир видеоигр</h1>
-        <p class="intro">Привет, меня зовут Маша, и на этом сайте я составила топ-3 самых лучших видеоигр для мобильных устройств, которые в своё время зацепили меня своим сюжетом, персонажами или геймплеем.</p>
+        <p>Привет, меня зовут Маша, и на этом сайте я составила топ-3 самых лучших видеоигр для мобильных устройств, которые в своё время зацепили меня своим сюжетом, персонажами или геймплеем.</p>
+    </header>
 
-        <p>Выбери раздел ниже:</p>
+    <main class="wrap">
+        <h2 class="section-title">Выбери раздел ниже</h2>
 
         <ol class="games">
-            <li>
-                <a href="page2.html">
-                    <img src="images/hsr.jpg" alt="Герои Honkai: Star Rail на фоне космоса">
-                    <span><span class="place">1.</span> Honkai: Star Rail</span>
+            <li class="hsr">
+                <a href="page2.html" class="card">
+                    <span class="rank">1</span>
+                    <div class="pic"><img src="images/hsr.jpg" alt="Герои Honkai: Star Rail на фоне космоса"></div>
+                    <div class="card-body">
+                        <ul class="tags"><li>RPG</li><li>Гача</li><li>Пошаговые бои</li></ul>
+                        <h3>Honkai: Star Rail</h3>
+                        <p>Путешествие по планетам вместе с экипажем «Звёздного экспресса».</p>
+                        <span class="more">Подробнее →</span>
+                    </div>
                 </a>
             </li>
-            <li>
-                <a href="page3.html">
-                    <img src="images/sekai.jpg" alt="Вокалоиды из Project Sekai">
-                    <span><span class="place">2.</span> Colorful Stage. PROJECT SEKAI!</span>
+            <li class="sekai">
+                <a href="page3.html" class="card">
+                    <span class="rank">2</span>
+                    <div class="pic"><img src="images/sekai.jpg" alt="Вокалоиды из Project Sekai"></div>
+                    <div class="card-body">
+                        <ul class="tags"><li>Ритм-игра</li><li>Гача</li><li>Музыка</li></ul>
+                        <h3>Colorful Stage. PROJECT SEKAI!</h3>
+                        <p>Классные песни, вокалоиды и музыкальные группы.</p>
+                        <span class="more">Подробнее →</span>
+                    </div>
                 </a>
             </li>
-            <li>
-                <a href="page4.html">
-                    <img src="images/cookie.jpg" alt="Персонажи-печеньки из Cookie Run: Kingdom">
-                    <span><span class="place">3.</span> Cookie Run: Kingdom</span>
+            <li class="cookie">
+                <a href="page4.html" class="card">
+                    <span class="rank">3</span>
+                    <div class="pic"><img src="images/cookie.jpg" alt="Персонажи-печеньки из Cookie Run: Kingdom"></div>
+                    <div class="card-body">
+                        <ul class="tags"><li>Строительство</li><li>Бои</li><li>Мини-игры</li></ul>
+                        <h3>Cookie Run: Kingdom</h3>
+                        <p>Своё королевство, печеньки-герои и куча активностей.</p>
+                        <span class="more">Подробнее →</span>
+                    </div>
                 </a>
             </li>
         </ol>
     </main>
 
-    <footer>Маша, 2026</footer>
+    <footer>Сделано с <span>♥</span> — Маша, 2026</footer>
 </body>
 </html>

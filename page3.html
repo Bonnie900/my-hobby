@@ -8,40 +8,51 @@
 </head>
 <body class="sekai">
     <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="page2.html">Honkai: Star Rail</a></li>
-            <li><a href="page3.html" class="active">Project Sekai</a></li>
-            <li><a href="page4.html">Cookie Run: Kingdom</a></li>
-        </ul>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Мир <span>игр</span></a>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="page2.html">Honkai: Star Rail</a></li>
+                <li><a href="page3.html" class="active">Project Sekai</a></li>
+                <li><a href="page4.html">Cookie Run: Kingdom</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <h1>Colorful Stage. PROJECT SEKAI!</h1>
-        <p>Project Sekai — это ритм-игра с элементами гачи и классными песнями. Новые песни появляются с каждым обновлением. В игре также присутствуют разные персонажи: как вокалоиды (электронные певцы), так и разные музыкальные группы.</p>
+    <header class="banner" style="background-image: url('images/sekai.jpg'); background-position: center 20%;">
+        <div class="banner-text">
+            <div class="number">МЕСТО №2</div>
+            <h1>Colorful Stage. PROJECT SEKAI!</h1>
+            <ul class="tags"><li>Ритм-игра</li><li>Гача</li><li>Музыка</li></ul>
+            <p class="lead">Project Sekai — это ритм-игра с элементами гачи и классными песнями. Новые песни появляются с каждым обновлением. В игре также присутствуют разные персонажи: как вокалоиды (электронные певцы), так и разные музыкальные группы.</p>
+        </div>
+    </header>
 
-        <figure>
-            <img src="images/sekai.jpg" alt="Вокалоиды из Project Sekai, в центре — девочка с длинными бирюзовыми хвостиками">
-            <figcaption>Вокалоиды из игры</figcaption>
-        </figure>
+    <main class="wrap">
+        <section class="panel">
+            <h2><span class="icon">🎤</span> Сюжет</h2>
+            <p>Сюжет крутится вокруг нескольких музыкальных групп, которые пытаются найти себя и свою музыку, при этом не растеряв друзей по пути.</p>
+            <figure>
+                <img src="images/sekai.jpg" alt="Вокалоиды из Project Sekai, в центре — девочка с длинными бирюзовыми хвостиками">
+                <figcaption>Вокалоиды из игры</figcaption>
+            </figure>
+        </section>
 
-        <h2>Сюжет</h2>
-        <p>Сюжет крутится вокруг нескольких музыкальных групп, которые пытаются найти себя и свою музыку, при этом не растеряв друзей по пути.</p>
-
-        <h2>Геймплей</h2>
-        <p>Нужно попадать в ритм по клавишам — чем-то напоминает старую игру Piano Tiles.</p>
-
-        <figure>
-            <img src="images/sekai-gameplay.jpg" alt="Ритм-игра: дорожки с нотами и надпись PERFECT">
-            <figcaption>Клавиши летят по дорожкам — нажимай вовремя!</figcaption>
-        </figure>
+        <section class="panel">
+            <h2><span class="icon">🎵</span> Геймплей</h2>
+            <p>Нужно попадать в ритм по клавишам — чем-то напоминает старую игру Piano Tiles.</p>
+            <figure>
+                <img src="images/sekai-gameplay.jpg" alt="Ритм-игра: дорожки с нотами и надпись PERFECT">
+                <figcaption>Клавиши летят по дорожкам — нажимай вовремя!</figcaption>
+            </figure>
+        </section>
 
         <div class="pager">
-            <a href="page2.html">← Honkai: Star Rail</a>
-            <a href="page4.html">Cookie Run: Kingdom →</a>
+            <a href="page2.html" class="btn">← Honkai: Star Rail</a>
+            <a href="page4.html" class="btn">Cookie Run: Kingdom →</a>
         </div>
     </main>
 
-    <footer>Маша, 2026</footer>
+    <footer>Сделано с <span>♥</span> — Маша, 2026</footer>
 </body>
 </html>

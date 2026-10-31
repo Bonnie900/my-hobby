@@ -8,46 +8,63 @@
 </head>
 <body class="cookie">
     <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="page2.html">Honkai: Star Rail</a></li>
-            <li><a href="page3.html">Project Sekai</a></li>
-            <li><a href="page4.html" class="active">Cookie Run: Kingdom</a></li>
-        </ul>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Мир <span>игр</span></a>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="page2.html">Honkai: Star Rail</a></li>
+                <li><a href="page3.html">Project Sekai</a></li>
+                <li><a href="page4.html" class="active">Cookie Run: Kingdom</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <h1>Cookie Run: Kingdom</h1>
-        <p>Cookie Run: Kingdom — многопользовательская мобильная игра о строительстве своего королевства, боях и разных активностях, которые меняются с каждым обновлением.</p>
-
-        <figure>
-            <img src="images/cookie.jpg" alt="Персонажи-печеньки из Cookie Run: Kingdom">
-            <figcaption>Герои-печеньки</figcaption>
-        </figure>
-
-        <h2>Сюжет</h2>
-        <p>Вы — Храбрая печенька, один из героев этого мира, призванный помочь пяти Древним разрешить их конфликт и победить чудовищ, недавно освобождённых из древа Короля фей после его смерти. Вы исследуете Хлебоземье, заводите союзников и побеждаете врагов.</p>
-
-        <h2>Геймплей</h2>
-        <p>Здесь каждый найдёт, чем заняться: от изучения сюжета разных королевств и строительства своего собственного королевства до гачи и различных мини-игр — будь то «три в ряд», победа над боссом, собирание предметов или разные челленджи с боями.</p>
-
-        <div class="pair">
-            <figure>
-                <img src="images/cookie-1.jpg" alt="Яркий бой с боссом в Cookie Run: Kingdom">
-                <figcaption>Бой с боссом</figcaption>
-            </figure>
-            <figure>
-                <img src="images/cookie-2.jpg" alt="Мини-игра-раннер в розовых тонах">
-                <figcaption>Мини-игра</figcaption>
-            </figure>
+    <header class="banner" style="background-image: url('images/cookie.jpg'); background-position: center 35%;">
+        <div class="banner-text">
+            <div class="number">МЕСТО №3</div>
+            <h1>Cookie Run: Kingdom</h1>
+            <ul class="tags"><li>Строительство</li><li>Бои</li><li>Гача</li><li>Мини-игры</li></ul>
+            <p class="lead">Cookie Run: Kingdom — многопользовательская мобильная игра о строительстве своего королевства, боях и разных активностях, которые меняются с каждым обновлением.</p>
         </div>
+    </header>
+
+    <main class="wrap">
+        <section class="panel">
+            <h2><span class="icon">🍪</span> Сюжет</h2>
+            <p>Вы — Храбрая печенька, один из героев этого мира, призванный помочь пяти Древним разрешить их конфликт и победить чудовищ, недавно освобождённых из древа Короля фей после его смерти. Вы исследуете Хлебоземье, заводите союзников и побеждаете врагов.</p>
+        </section>
+
+        <section class="panel">
+            <h2><span class="icon">🏰</span> Геймплей</h2>
+            <p>Здесь каждый найдёт, чем заняться:</p>
+            <ul class="tiles">
+                <li>Изучение сюжета разных королевств</li>
+                <li>Строительство своего королевства</li>
+                <li>Гача</li>
+                <li>Мини-игры «три в ряд»</li>
+                <li>Победа над боссом</li>
+                <li>Собирание предметов</li>
+                <li>Челленджи с боями</li>
+            </ul>
+
+            <div class="pair">
+                <figure>
+                    <img src="images/cookie-1.jpg" alt="Яркий бой с боссом в Cookie Run: Kingdom">
+                    <figcaption>Бой с боссом</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/cookie-2.jpg" alt="Мини-игра-раннер в розовых тонах">
+                    <figcaption>Мини-игра</figcaption>
+                </figure>
+            </div>
+        </section>
 
         <div class="pager">
-            <a href="page3.html">← Project Sekai</a>
-            <a href="index.html">На главную →</a>
+            <a href="page3.html" class="btn">← Project Sekai</a>
+            <a href="index.html" class="btn">На главную →</a>
         </div>
     </main>
 
-    <footer>Маша, 2026</footer>
+    <footer>Сделано с <span>♥</span> — Маша, 2026</footer>
 </body>
 </html>

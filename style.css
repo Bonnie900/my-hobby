@@ -1,161 +1,426 @@
-/* Общие стили для всех страниц */
+/* ===== Общие стили для всех страниц ===== */
+
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Nunito:wght@400;600;800&display=swap");
+
+:root {
+    --bg: #0e0b22;
+    --panel: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.12);
+    --text: #efeaff;
+    --muted: #b3aad6;
+    --pink: #ff5fae;
+    --violet: #8b6cff;
+    --accent: var(--pink);
+}
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Nunito", "Segoe UI", Arial, sans-serif;
     font-size: 18px;
-    line-height: 1.6;
-    color: #f1eefc;
-    background: #14112b;
-    background-image: radial-gradient(circle at 20% 0%, #3b2a7a 0%, transparent 45%),
-                      radial-gradient(circle at 90% 30%, #6a2357 0%, transparent 40%);
+    line-height: 1.65;
+    color: var(--text);
+    background-color: var(--bg);
+    /* звёздное небо */
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 30% 70%, #fff 50%, transparent 51%),
+        radial-gradient(2px 2px at 55% 15%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 75% 45%, #fff 50%, transparent 51%),
+        radial-gradient(2px 2px at 90% 80%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 45% 90%, #fff 50%, transparent 51%),
+        radial-gradient(ellipse at 15% 0%, rgba(139, 108, 255, 0.35), transparent 50%),
+        radial-gradient(ellipse at 100% 40%, rgba(255, 95, 174, 0.25), transparent 45%);
+    background-size: 400px 400px, 400px 400px, 400px 400px, 400px 400px, 400px 400px, 400px 400px, 100% 100%, 100% 100%;
     background-attachment: fixed;
 }
 
-/* Меню */
+h1, h2, h3, .logo {
+    font-family: "Unbounded", "Segoe UI", Arial, sans-serif;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--accent);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ===== Меню ===== */
 nav {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(20, 17, 43, 0.9);
-    border-bottom: 1px solid #3d3670;
+    background: rgba(14, 11, 34, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--pink);
 }
 
 nav ul {
     list-style: none;
-    margin: 0 auto;
-    padding: 10px 16px;
-    max-width: 960px;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
 }
 
-nav a {
+nav ul a {
     display: block;
     padding: 6px 14px;
-    border-radius: 20px;
-    color: #f1eefc;
+    border-radius: 999px;
+    color: var(--text);
     text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.2s;
 }
 
-nav a:hover {
-    background: #3d3670;
+nav ul a:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-nav a.active {
-    background: #ff6fb5;
-    color: #14112b;
-    font-weight: bold;
+nav ul a.active {
+    background: linear-gradient(135deg, var(--pink), var(--violet));
+    color: #fff;
 }
 
-/* Основная часть */
-main {
-    max-width: 960px;
+/* ===== Главная: шапка ===== */
+.hero {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 16px 48px;
+    padding: 70px 16px 40px;
+    text-align: center;
 }
 
-h1 {
-    font-size: 44px;
-    margin: 24px 0 12px;
-    color: #ffffff;
+.hello {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 28px;
-    margin-top: 36px;
-    color: var(--accent, #ff6fb5);
+.hero h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 900;
+    margin: 0 0 20px;
+    background: linear-gradient(90deg, #8fb8ff, var(--pink), #ffc35c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-.intro {
+.hero p {
+    max-width: 720px;
+    margin: 0 auto;
     font-size: 20px;
+    color: var(--text);
 }
 
-/* Карточки игр на главной */
+/* ===== Главная: карточки игр ===== */
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 22px;
+    color: var(--muted);
+    margin: 10px 0 30px;
+}
+
 .games {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 26px;
 }
 
-.games a {
-    display: block;
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    background: #221d47;
-    border: 2px solid #3d3670;
-    border-radius: 16px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 22px;
     overflow: hidden;
-    color: #f1eefc;
+    color: var(--text);
     text-decoration: none;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
-.games a:hover {
-    transform: translateY(-4px);
-    border-color: #ff6fb5;
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 50px -15px var(--accent);
 }
 
-.games img {
+.card img {
     width: 100%;
-    height: 170px;
+    height: 210px;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s;
 }
 
-.games a > span {
-    display: block;
-    padding: 14px 16px;
+.card:hover img {
+    transform: scale(1.06);
+}
+
+.card .pic {
+    overflow: hidden;
+}
+
+.rank {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: "Unbounded", sans-serif;
+    font-weight: 900;
     font-size: 20px;
-    font-weight: bold;
+    color: #fff;
+    background: var(--accent);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
-.games .place {
-    color: #ff6fb5;
-    margin-right: 6px;
+.card-body {
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-/* Картинки на страницах игр */
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+.card p {
+    margin: 0 0 16px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.more {
+    margin-top: auto;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+/* Теги жанров */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 0;
+    list-style: none;
+}
+
+.tags li {
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+/* ===== Страница игры: баннер ===== */
+.banner {
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--bg) 3%, rgba(14, 11, 34, 0.55) 55%, rgba(14, 11, 34, 0.2));
+}
+
+.banner-text {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 16px 30px;
+}
+
+.banner .number {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+.banner h1 {
+    font-size: clamp(34px, 6vw, 64px);
+    font-weight: 900;
+    margin: 8px 0 16px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+}
+
+.lead {
+    font-size: 20px;
+    max-width: 820px;
+    margin: 0;
+}
+
+/* ===== Страница игры: панели ===== */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 28px 30px;
+    margin-top: 30px;
+}
+
+.panel h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 18px;
+    font-size: 28px;
+    color: var(--accent);
+}
+
+.panel h2 .icon {
+    font-size: 30px;
+}
+
+.panel h3 {
+    font-size: 18px;
+    margin: 26px 0 12px;
+    color: #fff;
+}
+
+/* Плитки: экипаж, планеты */
+.tiles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 12px;
+}
+
+.tiles li {
+    background: rgba(255, 255, 255, 0.06);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 700;
+}
+
+.tiles small {
+    display: block;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* Особенности геймплея */
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 16px;
+}
+
+.features li {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+}
+
+.features b {
+    display: block;
+    font-family: "Unbounded", sans-serif;
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+
+/* Картинки */
 figure {
-    margin: 24px 0;
+    margin: 26px 0 0;
 }
 
 figure img {
     width: 100%;
-    border-radius: 14px;
     display: block;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 50px -20px var(--accent);
 }
 
 figcaption {
     font-size: 15px;
-    color: #b7b0dc;
-    margin-top: 6px;
+    color: var(--muted);
+    margin-top: 10px;
     text-align: center;
+    font-style: italic;
 }
 
 .pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.pair figure {
-    margin: 0;
-}
-
-/* Список особенностей геймплея */
-.features {
-    padding-left: 22px;
-}
-
-.features li {
-    margin-bottom: 12px;
+    gap: 18px;
 }
 
 /* Цвет у каждой игры свой */
@@ -164,14 +429,14 @@ figcaption {
 }
 
 .sekai {
-    --accent: #4fe0d0;
+    --accent: #3fe0cf;
 }
 
 .cookie {
-    --accent: #ffc35c;
+    --accent: #ffbf47;
 }
 
-/* Кнопки внизу страницы */
+/* ===== Кнопки внизу ===== */
 .pager {
     display: flex;
     justify-content: space-between;
@@ -180,38 +445,67 @@ figcaption {
     margin-top: 40px;
 }
 
-.pager a {
-    padding: 10px 18px;
-    border-radius: 24px;
-    background: #3d3670;
-    color: #fff;
+.btn {
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
     text-decoration: none;
+    font-weight: 800;
+    transition: background 0.2s, color 0.2s;
 }
 
-.pager a:hover {
-    background: #ff6fb5;
-    color: #14112b;
+.btn:hover {
+    background: var(--accent);
+    color: #0e0b22;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #8c85b8;
-    border-top: 1px solid #3d3670;
+    padding: 26px 16px;
+    font-size: 15px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
 }
 
-/* Телефон */
-@media (max-width: 600px) {
+footer span {
+    color: var(--pink);
+}
+
+/* ===== Телефон ===== */
+@media (max-width: 640px) {
     body {
         font-size: 16px;
     }
 
-    h1 {
-        font-size: 32px;
+    .hero {
+        padding-top: 40px;
     }
 
-    .pair {
+    .hero p,
+    .lead {
+        font-size: 17px;
+    }
+
+    .banner {
+        min-height: 360px;
+    }
+
+    .panel {
+        padding: 20px 18px;
+    }
+
+    .panel h2 {
+        font-size: 22px;
+    }
+
+    .pair,
+    .features {
         grid-template-columns: 1fr;
+    }
+
+    .logo {
+        display: none;
     }
 }
