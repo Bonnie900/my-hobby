@@ -1,0 +1,217 @@
+/* Общие стили для всех страниц */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f1eefc;
+    background: #14112b;
+    background-image: radial-gradient(circle at 20% 0%, #3b2a7a 0%, transparent 45%),
+                      radial-gradient(circle at 90% 30%, #6a2357 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Меню */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(20, 17, 43, 0.9);
+    border-bottom: 1px solid #3d3670;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 10px 16px;
+    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    display: block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #f1eefc;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #3d3670;
+}
+
+nav a.active {
+    background: #ff6fb5;
+    color: #14112b;
+    font-weight: bold;
+}
+
+/* Основная часть */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+h1 {
+    font-size: 44px;
+    margin: 24px 0 12px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 36px;
+    color: var(--accent, #ff6fb5);
+}
+
+.intro {
+    font-size: 20px;
+}
+
+/* Карточки игр на главной */
+.games {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.games a {
+    display: block;
+    height: 100%;
+    background: #221d47;
+    border: 2px solid #3d3670;
+    border-radius: 16px;
+    overflow: hidden;
+    color: #f1eefc;
+    text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.games a:hover {
+    transform: translateY(-4px);
+    border-color: #ff6fb5;
+}
+
+.games img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.games a > span {
+    display: block;
+    padding: 14px 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.games .place {
+    color: #ff6fb5;
+    margin-right: 6px;
+}
+
+/* Картинки на страницах игр */
+figure {
+    margin: 24px 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 14px;
+    display: block;
+}
+
+figcaption {
+    font-size: 15px;
+    color: #b7b0dc;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.pair figure {
+    margin: 0;
+}
+
+/* Список особенностей геймплея */
+.features {
+    padding-left: 22px;
+}
+
+.features li {
+    margin-bottom: 12px;
+}
+
+/* Цвет у каждой игры свой */
+.hsr {
+    --accent: #8fb8ff;
+}
+
+.sekai {
+    --accent: #4fe0d0;
+}
+
+.cookie {
+    --accent: #ffc35c;
+}
+
+/* Кнопки внизу страницы */
+.pager {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.pager a {
+    padding: 10px 18px;
+    border-radius: 24px;
+    background: #3d3670;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pager a:hover {
+    background: #ff6fb5;
+    color: #14112b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #8c85b8;
+    border-top: 1px solid #3d3670;
+}
+
+/* Телефон */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .pair {
+        grid-template-columns: 1fr;
+    }
+}
